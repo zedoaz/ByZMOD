@@ -702,7 +702,7 @@ function clearResultEntry()
 }
 function writeEnvInfo()
 {
-	setInnerHTML(document.getElementById('footer'),hr+"<h3>PS3 System Browser Info:</h3>"+navigator.userAgent+br+navigator.appName+" (" + navigator.platform + ")"+br+new Date().toTimeString() + br);
+	setInnerHTML(document.getElementById('footer'),hr+"<h3><font color=%ff0000%>PS3 System Browser Info:</h3>"+navigator.userAgent+br+navigator.appName+" (" + navigator.platform + ")"+br+new Date().toTimeString() + br);
 }
 
 String.prototype.setCharAt = function(index,chr)
