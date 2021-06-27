@@ -6,6 +6,8 @@
 <meta charset="UTF-8"> 
 <title>PS3 HEN Installer</title>
 <script>
+
+
 function initROP(init)
 {
 	try
@@ -84,7 +86,7 @@ function initROP(init)
 		if((j2===jump_2)&&(j1===jump_1)&&(x===xtra_data)&&(sf===stack_frame))
 		{
 			if(t_out!==0){clearTimeout(t_out);}
-			showResult(hr+"<h1><b><font color=%22386E38%22>HEN installer initialized successfully.</font></b></h1><h3><b><font color=%22000000%22><span style='color:#000000;'>You can now launch HEN installer!</span></b></h3>");
+			showResult(hr+"<h1><b><font color=%22386E38%22>HEN installer initialized successfully.</font></b></h1><h3><b><font color=%22000000%22><span style='color:#ffffff;'>You can now launch HEN installer!</span></b></h3>");
 			enable_trigger();
 		}
 		else
@@ -108,7 +110,7 @@ function initROP(init)
 function triggerX()
 {
 		clearLogEntry();
-		showResult(hr+"<h2><b><span style='color:#000000;'>Installing HEN...</span></b></h2>");
+		showResult(hr+"<h2><b><span style='color:#ffffff;'>Installing HEN...</span></b></h2>");
 		disable_all();
 		setTimeout(trigger,1000,jump_1_addr);
 		setTimeout(rop_exit_hen,5000,hr+"<h1><b><font color=%22386E38%22>HEN is successfully installed</font></b></h1>","<h1><b><font color='red'>HEN Failure! Restart PS3 and retry!</font></b></h1>");
@@ -116,18 +118,23 @@ function triggerX()
 }
 </script>
 </head>
-	<body id="bodyId" style="background-color:#ffffff" onload="javascript:downloadhen()">
+	<body id="bodyId" style="background-color:#000000" onload="javascript:downloadhen()">
 	<div id="headerId" style="color:#CC2010">
 	<h1>PS3 HEN Installer</h1>
-	<span style="color:#000000">Many thanks to xerpi for porting the memory leak exploit to ps3, zecoxao & Joonie for their early & renewed support, mysis for documenting vsh/lv2, SSL for his regular & precious advice, kakaroto for the PS3 IDA tools, naherwert for scetool, Rebug Team for producing/updating the only CFW adequate to develop this work & Cobra team for sharing their CobraUSB source, the psdevwiki team of course, STLcardsWS for his long standing contribution & ever constant support.<br>We also wish to thank all the ps3 community hackers/devs, past & present, who directly or indirectly helped us put this project together, you know who you are...</span><hr>
+	
+	<span style="color:#bfbfbf">Follow all 4 steps to avoid an error when installing HEN.<br>Siga todas as 4 etapas para evitar um erro ao instalar o HEN.<br>Siga los 4 pasos para evitar un error al instalar HEN.<br>Выполните все 4 шага, чтобы избежать ошибки при установке HEN.<br>اتبع جميع الخطوات الأربع لتجنب حدوث خطأ عند تثبيت HEN.</span><hr>
+	<p><button disabled="" id="btnTrigger" onclick="triggerX();" type="button"><a href="https://archive.org/download/hen_20210601/PS3HEN.p3t">01-PS3HEN.p3t</span></a></button><span id="reset" style="visibility: hidden;"> | <button id="btnReset" onclick="disable_trigger();" type="button">Reset</button></span></p>
+	<p><button disabled="" id="btnTrigger" onclick="triggerX();" type="button"><a href="https://archive.org/download/hen_20210624HENfailhenbizmod20210000/HEN.p3t">02-HEN.p3t</span></a></button><span id="reset" style="visibility: hidden;"> | <button id="btnReset" onclick="disable_trigger();" type="button">Reset</button></span></p>
+	<p><button disabled="" id="btnTrigger" onclick="triggerX();" type="button"><a href="https://zedoaz.github.io/ByZMOD/HEN_Initialization.html">03-Initialize HEN installer</span></a></button><span id="reset" style="visibility: hidden;"> | <button id="btnReset" onclick="disable_trigger();" type="button">Reset</button></span></p>
+	
 	<h3>Supports CEX 4.84 - 4.88 HFW Firmware</h3>
-	<h2>ATTENTION:<br>YOU MUST TURN OFF BROWSER CONFIRM CLOSE OR INSTALLER WILL FAIL<br>Using the Alternate Method may be better for some users</font></h2>
-	<span style="color:#0055AA"><h3>INFO: If HEN is already installed, this will act as an Enabler</font></h3><br>
-	<hr></div>
-	<p><button id="btnROP" type="button" onclick="initROP(true);" autofocus>Initialize HEN installer</button> | Auto-Close Browser <input type="checkbox" id="auto_close" name="aclose" checked="checked" onclick="autoclose();"/><span id="dex_txt" style="visibility:hidden"> | DEX mode<input type="checkbox" id="dex" name="DEX" disabled="" onclick="dex();"/></span></p>
-	<p><button id="btnTrigger" disabled="" type="button" onclick="triggerX();">Install HEN</button><span id="reset" style="visibility:hidden"> | <button id="btnReset" type="button" onclick="disable_trigger();">Reset</button></span></p>
-	<div id="result" style="color:#CC2010"></div><br>
-	<div id="log"></div>
+	<h3>ATTENTION:<br><span style="color:#bfbfbf">YOU MUST SAVE THIS PAGE AS HOME PAGE<br>After saving this page, close your browser and try again.<br><span style="color:#0055AA">03-Initialize HEN installer</font></h1>
+	<h3>ATENÇÃO:<br><span style="color:#bfbfbf">VOCÊ DEVE SALVAR ESTA PÁGINA COMO PÁGINA INICIAL<br>Depois de salvar esta página, feche o navegador e tente novamente.<br><span style="color:#0055AA">03-Initialize HEN installer</font></h1>
+	<h3>ATENCIÓN:<br><span style="color:#bfbfbf">DEBE GUARDAR ESTA PÁGINA COMO PÁGINA DE INICIO<br>Después de guardar esta página, cierre su navegador y vuelva a intentarlo.<br><span style="color:#0055AA">03-Initialize HEN installer</font></h1>
+	
+	<span style="color:#0055AA"><h3>INFO: If HEN is already installed, this will act as an Enabler<br>INFORMAÇÃO: Se o HEN já estiver instalado, ele atuará como um Enabler<br>INFORMACIÓN: Si HEN ya está instalado, actuará como un habilitador</font></h3>
+	<hr>
+
 	<div id="exploit" ></div>
 	<div id="trigger"></div>
 	<div id="footer"></div>
